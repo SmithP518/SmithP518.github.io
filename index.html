@@ -47,8 +47,8 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            color: #e0e0e0;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
             background-size: 400% 400%;
             animation: gradient-shift 15s ease infinite;
             min-height: 100vh;
@@ -75,9 +75,10 @@
 
         .shape {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(102, 126, 234, 0.15);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 40px rgba(102, 126, 234, 0.3);
         }
 
         .shape:nth-child(1) {
@@ -119,10 +120,11 @@
             font-weight: 800;
             letter-spacing: -2px;
             animation: fadeInUp 0.8s ease-out;
-            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.5));
         }
 
         header p {
@@ -135,17 +137,17 @@
 
         /* Navigation */
         nav {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(20, 20, 30, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(102, 126, 234, 0.3);
             padding: 20px 0;
             position: sticky;
             top: 20px;
             z-index: 100;
             margin: 0 20px;
             border-radius: 50px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(102, 126, 234, 0.2);
             animation: slideInLeft 0.8s ease-out 0.4s both;
         }
 
@@ -158,7 +160,7 @@
 
         nav a {
             text-decoration: none;
-            color: white;
+            color: #e0e0e0;
             font-weight: 600;
             transition: all 0.3s ease;
             font-size: 1.05rem;
@@ -173,30 +175,33 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: white;
+            background: linear-gradient(90deg, #667eea, #f093fb);
             transition: all 0.3s ease;
             transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+        }
+
+        nav a:hover {
+            color: #f093fb;
+            transform: translateY(-2px);
+            text-shadow: 0 0 20px rgba(240, 147, 251, 0.5);
         }
 
         nav a:hover::after {
             width: 100%;
         }
 
-        nav a:hover {
-            transform: translateY(-2px);
-        }
-
         /* Main Content */
         main {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(20, 20, 30, 0.85);
             backdrop-filter: blur(20px);
             border-radius: 30px;
             padding: 80px 60px;
             margin: 60px auto;
-            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5), 0 0 40px rgba(102, 126, 234, 0.15);
             position: relative;
             z-index: 1;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         section {
@@ -237,7 +242,7 @@
         .about-content {
             font-size: 1.15rem;
             line-height: 2;
-            color: #444;
+            color: #b0b0b0;
             max-width: 800px;
         }
 
@@ -255,14 +260,15 @@
         }
 
         .project-card {
-            background: white;
+            background: rgba(30, 30, 45, 0.9);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(102, 126, 234, 0.2);
             position: relative;
             animation: fadeInUp 0.6s ease-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .project-card::before {
@@ -280,11 +286,12 @@
 
         .project-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4), 0 0 40px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.5);
         }
 
         .project-card:hover::before {
-            opacity: 0.05;
+            opacity: 0.1;
         }
 
         .project-card:nth-child(1) { animation-delay: 0.1s; }
@@ -331,17 +338,17 @@
         .project-content h3 {
             font-size: 1.6rem;
             margin-bottom: 12px;
-            color: #1a1a1a;
+            color: #e0e0e0;
             font-weight: 700;
             transition: color 0.3s ease;
         }
 
         .project-card:hover .project-content h3 {
-            color: #667eea;
+            color: #f093fb;
         }
 
         .project-content p {
-            color: #666;
+            color: #a0a0a0;
             margin-bottom: 20px;
             line-height: 1.7;
         }
@@ -353,13 +360,13 @@
         }
 
         .tag {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            color: #667eea;
+            background: rgba(102, 126, 234, 0.15);
+            color: #8ba4f3;
             padding: 8px 16px;
             border-radius: 25px;
             font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid rgba(102, 126, 234, 0.2);
+            border: 1px solid rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
         }
 
@@ -367,6 +374,7 @@
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4), 0 0 20px rgba(102, 126, 234, 0.3);
         }
 
         /* Skills Section */
@@ -389,7 +397,8 @@
             position: relative;
             overflow: hidden;
             animation: fadeInUp 0.6s ease-out;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4), 0 0 20px rgba(102, 126, 234, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .skill-item::before {
@@ -406,7 +415,7 @@
 
         .skill-item:hover {
             transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.6), 0 0 40px rgba(102, 126, 234, 0.4);
         }
 
         .skill-item:hover::before {
@@ -436,10 +445,10 @@
             align-items: center;
             gap: 20px;
             padding: 25px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            background: rgba(30, 30, 45, 0.6);
             border-radius: 15px;
             transition: all 0.4s ease;
-            border: 1px solid rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.2);
             animation: fadeInUp 0.6s ease-out;
             position: relative;
             overflow: hidden;
@@ -458,9 +467,10 @@
         }
 
         .contact-item:hover {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            background: rgba(30, 30, 45, 0.9);
             transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3), 0 0 30px rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.4);
         }
 
         .contact-item:hover::before {
@@ -482,12 +492,13 @@
             color: white;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5), 0 0 20px rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
         }
 
         .contact-item:hover .contact-icon {
             transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6), 0 0 30px rgba(102, 126, 234, 0.5);
         }
 
         /* Footer */
@@ -630,7 +641,7 @@
                 <div class="skills-grid">
                     <div class="skill-item">Python</div>
                     <div class="skill-item">Java</div>
-                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">C++</div>
                     <div class="skill-item">HTML/CSS</div>
                     <div class="skill-item">JavaScript</div>
                     <div class="skill-item">Git</div>
@@ -645,7 +656,7 @@
                     <div class="contact-item">
                         <div class="contact-icon">@</div>
                         <div>
-                            <strong>Email:</strong> parker.smith1208@gmail.com
+                            <strong>Email:</strong> parker.smith1802@gmail.com
                         </div>
                     </div>
                     <div class="contact-item">
@@ -657,7 +668,7 @@
                     <div class="contact-item">
                         <div class="contact-icon">GH</div>
                         <div>
-                            <strong>GitHub:</strong> https://github.com/SmithP518
+                            <strong>GitHub:</strong> github.com/SmithP518
                         </div>
                     </div>
                 </div>
